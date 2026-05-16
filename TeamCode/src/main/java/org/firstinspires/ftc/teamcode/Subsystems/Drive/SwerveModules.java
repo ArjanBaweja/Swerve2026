@@ -1,4 +1,4 @@
-package Subsystems.Drive;
+package org.firstinspires.ftc.teamcode.Subsystems.Drive;
 
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -24,10 +24,11 @@ public class SwerveModules {
 
     }
 
-    public void applyPower(double P){
+    public void applyPowerM(double P){driveMotor.setPower(P);}
 
-        driveMotor.setPower(P);
-    }
+    public double getPositionD(){return (aE.getVoltage() / 3.3) * 360;}
+    public void applyPowerS(double P){steerServo.setPower(P);}
+
 
 
 }
