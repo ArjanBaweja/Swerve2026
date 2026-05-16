@@ -1,8 +1,11 @@
 package org.firstinspires.ftc.teamcode.Teleops;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.CRServo;
+
+@TeleOp(name="OnlySevos")
 
 public class ServoTests extends LinearOpMode {
     CRServo Sc1, Sc2, Se1, Se2;

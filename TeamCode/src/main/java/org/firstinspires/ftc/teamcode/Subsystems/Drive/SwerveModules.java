@@ -47,7 +47,7 @@ public class SwerveModules {
             error       = Math.atan2(Math.sin(targetAngle - current), Math.cos(targetAngle - current)); //error [pi,-pi]
         }
 
-        if (Math.abs(error) < absError) {
+        if (power < 0.05 && Math.abs(error) < absError) {
             steerServo.setPower(0);
             driveMotor.setPower(power);
             lastError = 0;
@@ -62,12 +62,10 @@ public class SwerveModules {
         steerServo.setPower(clamp(P + D, -1.0, 1.0));
         driveMotor.setPower(power);
     }
-
     public void stop() {
         steerServo.setPower(0);
         driveMotor.setPower(0);
         lastError = 0;
     }
-
 
 }
